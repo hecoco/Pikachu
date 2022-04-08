@@ -1,0 +1,171 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+*::before{box-sizing: border-box;}
+*::after{box-sizing: border-box;}
+body{
+    background: #ffe600;
+    height: 100vh;
+}
+.skin{
+    position: relative;
+}
+.eve{
+    border: 2px solid rgb(0, 0, 0);
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    border-radius:50%;
+    background:#2e2e2e;
+    position: absolute;
+    left: 50%;
+    top:100px;
+    margin-left: -32px;
+}
+
+.eve::before{
+    content: '';
+    border: 3px solid rgb(0, 0, 0);
+    width: 25px;
+    height: 25px;
+    border-radius:50%;
+    display: block;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    top: 4px;
+    left: 6px;
+}
+.eve.left{
+    transform: translateX(-100px);
+}
+.eve.right{
+    transform: translateX(100px);
+}
+.nose{
+    display:inline-block;
+    width: 20px;
+    height: 8px;
+    position: absolute;
+    top: 180px;
+    background: rgb(0, 0, 0);
+    border-radius: 10px 10px 0 0;
+    border-bottom: none;
+    left: 50%;
+    margin-left: -10px;
+    z-index: 10;
+}
+@keyframes wave{
+    0%{
+    transform:rotate(0deg);
+    }
+    33%{
+        transform:rotate(5deg);
+    }
+    66%{
+        transform:rotate(-5deg);
+    }
+    100%{
+        transform:rotate(0deg);
+    }
+}
+.nose:hover{
+    transform-origin: 50% 200%;
+    animation: wave 280ms infinite ;
+}
+.nose::before{
+    content: '';
+    display: block;
+    border: 10px solid rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0) transparent transparent;
+    position: absolute;
+    top: 8px;
+}
+
+.mouth{
+    width: 160px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    margin-left: -80px;
+}
+
+.mouth >.up>.lip.left{
+    border: 1px solid rgb(0, 0, 0);
+    width: 80px;
+    height: 20px;
+    position: absolute;
+    background: #ffe600;
+    left: 50%;
+    margin-left: -80px;
+    border-radius: 0 0 0 50px;
+    border-width: 0 0px 2px 2px;
+    border-color:  #ffe600 #ffe600 rgb(0, 0, 0) rgb(0, 0, 0);
+    transform:rotate(-15deg);
+    z-index:1;
+}
+.mouth>.up>.lip.right{
+    border: 1px solid rgb(0, 0, 0);
+    width: 80px;
+    height: 20px;
+    position: absolute;
+    background: #ffe600;
+    left: 50%;
+    margin-left: 0px;
+    border-radius: 0  0 50px 0 ;
+    border-width: 0px 2px 2px 0px;
+    border-color:  #ffe600 rgb(0, 0, 0)  rgb(0, 0, 0) #ffe600; 
+    transform:rotate(15deg);
+    z-index:1;
+}
+.mouth .down{
+    position: absolute;
+    height: 160px;
+    width: 138px;
+    left: 11px;
+    top: 8px;
+    overflow: hidden;
+}
+.mouth .down .yuan1{
+    border: 2px solid rgb(0, 0, 0);
+    width: 100px;
+    height: 1000px;
+    background: #9b000a;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 75px/300px;
+    overflow: hidden;
+}
+.mouth .down .yuan1 .yuan2{
+    border: 2px solid rgb(0, 0, 0);
+    width: 100px;
+    height: 200px;
+    background: #ff485f;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    top: 880px;
+    border-radius: 300px/75px;
+    overflow: hidden;
+}
+
+.face{
+    border: 3px solid rgb(0, 0, 0);
+    height: 60px;
+    width: 60px;
+    border-radius:50%;
+    position: absolute;
+    top: 230px;
+    left: 50%;
+    margin-left: -30px;
+    background: red;
+}
+.face.left{
+    transform: translateX(-120px);
+}
+.face.right{
+    transform: translateX(120px);
+}
